@@ -47209,31 +47209,29 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default), {
+                                children: !user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
+                                    as: (0, _reactRouterDom.Link),
+                                    to: "/signup",
+                                    children: "Signup"
+                                }, void 0, false, {
+                                    fileName: "src/shared/components/nav-bar/nav-bar.jsx",
+                                    lineNumber: 35,
+                                    columnNumber: 19
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/shared/components/nav-bar/nav-bar.jsx",
+                                lineNumber: 33,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default), {
                                 children: [
-                                    !user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                as: (0, _reactRouterDom.Link),
-                                                to: "/login",
-                                                children: "Login"
-                                            }, void 0, false, {
-                                                fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                lineNumber: 36,
-                                                columnNumber: 21
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                as: (0, _reactRouterDom.Link),
-                                                to: "/signup",
-                                                children: "Signup"
-                                            }, void 0, false, {
-                                                fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                lineNumber: 39,
-                                                columnNumber: 21
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
+                                    !user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
+                                        as: (0, _reactRouterDom.Link),
+                                        to: "/login",
+                                        children: "Login"
+                                    }, void 0, false, {
                                         fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                        lineNumber: 35,
+                                        lineNumber: 42,
                                         columnNumber: 19
                                     }, undefined),
                                     user && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -47242,14 +47240,14 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                             children: "Logout"
                                         }, void 0, false, {
                                             fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                            lineNumber: 46,
+                                            lineNumber: 48,
                                             columnNumber: 21
                                         }, undefined)
                                     }, void 0, false)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                lineNumber: 33,
+                                lineNumber: 40,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Offcanvas, {
@@ -47264,12 +47262,12 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                             children: "My Library"
                                         }, void 0, false, {
                                             fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                            lineNumber: 56,
+                                            lineNumber: 58,
                                             columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                        lineNumber: 55,
+                                        lineNumber: 57,
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _offcanvasDefault.default).Body, {
@@ -47282,7 +47280,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Home"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 63,
+                                                    lineNumber: 65,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47292,7 +47290,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Login"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 66,
+                                                    lineNumber: 68,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47302,7 +47300,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Signup"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 69,
+                                                    lineNumber: 71,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47312,7 +47310,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Logout"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 72,
+                                                    lineNumber: 74,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47321,7 +47319,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Titles"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 75,
+                                                    lineNumber: 77,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47330,7 +47328,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Authors"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 78,
+                                                    lineNumber: 80,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47339,7 +47337,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Series"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 83,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47348,7 +47346,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Genre"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 84,
+                                                    lineNumber: 86,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47357,7 +47355,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Favorites"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 89,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
@@ -47366,24 +47364,24 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     children: "Reading List"
                                                 }, void 0, false, {
                                                     fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                                    lineNumber: 90,
+                                                    lineNumber: 92,
                                                     columnNumber: 21
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                            lineNumber: 62,
+                                            lineNumber: 64,
                                             columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                        lineNumber: 61,
+                                        lineNumber: 63,
                                         columnNumber: 17
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/shared/components/nav-bar/nav-bar.jsx",
-                                lineNumber: 51,
+                                lineNumber: 53,
                                 columnNumber: 15
                             }, undefined)
                         ]

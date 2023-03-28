@@ -16,8 +16,8 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
           <Navbar key={expand} expand={expand} className="mb-4 navbar">
             <Container fluid>
               <Navbar.Toggle
-                aria-controls={`offcanvasNavbar-expand-${expand}`}
-              />
+                aria-controls={`offcanvasNavbar-expand-${expand}`}>
+              </Navbar.Toggle>
               <Navbar.Brand as={Link} to="/" className="brand">
                 My Library
               </Navbar.Brand>
@@ -32,14 +32,16 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
               </Form>
               <Nav>
                 {!user && (
-                  <span>
-                    <Nav.Link as={Link} to="/login">
-                      Login
-                    </Nav.Link>
-                    <Nav.Link as={Link} to="/signup">
-                      Signup
-                    </Nav.Link>
-                  </span>
+                  <Nav.Link as={Link} to="/signup">
+                    Signup
+                  </Nav.Link>
+                )}
+              </Nav>
+              <Nav>
+                {!user && (
+                  <Nav.Link as={Link} to="/login">
+                    Login
+                  </Nav.Link>
                 )}
                 {user && (
                   <>
