@@ -2,8 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from '../main-view/main-view';
-import { Signup } from '../../users/pages/signup/signup';
-import { Login } from '../../users/pages/login/login';
+import { SignupView } from '../../users/pages/signup/signup';
+import { LoginView } from '../../users/pages/login/login';
 import { Profile } from '../../users/pages/profile/profile';
 import { Books } from '../../books/pages/titles/titles';
 import { Authors } from '../../books/pages/authors/authors';
@@ -135,8 +135,8 @@ export const MainView = () => {
               </>
             }
           />
-          <Route path="/signup" element={Signup} />
-          <Route path="/login" element={Login} />
+          {/* <Route path="/signup" element={Signup} />
+          <Route path="/login" element={Login} /> */}
           <Route path="/profile" element={Profile} />
           <Route path="/books" element={Books} />
           <Route path="/authors" element={Authors} />
