@@ -1,5 +1,6 @@
+$primary: SeaGreen;
+$body-bg: rgba(238,239,154,255);
 $color: steelblue;
+// $lines: rgba(238,215,136,255)
 
-.my-flix {
-  color: $color;
-}
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
