@@ -128,7 +128,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     {books.map((book) => (
-                      <BookList book={book} id="book.id" />
+                      <BookList book={book} key={book.id} />
                     ))}
                   </>
                 )}
@@ -137,17 +137,17 @@ export const MainView = () => {
           />
           {/* <Route path="/signup" element={Signup} />
           <Route path="/login" element={Login} /> */}
-          <Route path="/profile" element={Profile} />
           {/* <Route path="/books" element={Books} /> */}
-          <Route path="/authors" element={Authors} />
-          <Route path="/genres" element={Genres} />
-          <Route path="/series" element={Series} />
-          <Route path="/favorites" element={Favorites} />
-          <Route path="/que" element={Que} />
-          <Route path="/owned" element={Owned} />
-          <Route path="/read" element={Read} />
-          <Route path="/type" element={Type} />
-          <Route path="/availability" element={Availability} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/authors" element={<Authors />} />
+          <Route path="/genres" element={<Genres />} />
+          <Route path="/series" element={<Series />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/que" element={<Que />} />
+          <Route path="/owned" element={<Owned />} />
+          <Route path="/read" element={<Read />} />
+          <Route path="/type" element={<Type />} />
+          <Route path="/availability" element={<Availability />} />
         </Routes>
       </Row>
     </BrowserRouter>

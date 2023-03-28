@@ -12,7 +12,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
     <>
       {[false].map((expand) => (
-        <div className="navbar-holder">
+        <div key={expand} className="navbar-holder">
           <Navbar key={expand} expand={expand} className="mb-4 navbar">
             <Container fluid>
               <Navbar.Toggle
@@ -62,34 +62,34 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link id="0" href="/">
+                    <Nav.Link href="/">
                       Home
                     </Nav.Link>
-                    <Nav.Link id="1" onClick={onLoggedOut} href="/login">
+                    <Nav.Link onClick={onLoggedOut} href="/login">
                       Login
                     </Nav.Link>
-                    <Nav.Link id="2" onClick={onLoggedOut} href="/signup">
+                    <Nav.Link  onClick={onLoggedOut} href="/signup">
                       Signup
                     </Nav.Link>
-                    <Nav.Link id="3" onClick={onLoggedOut} href="/login">
+                    <Nav.Link onClick={onLoggedOut} href="/login">
                       Logout
                     </Nav.Link>
-                    <Nav.Link id="4" href="/">
+                    <Nav.Link  href="/">
                       Titles
                     </Nav.Link>
-                    <Nav.Link id="5" href="#action2">
+                    <Nav.Link  href="#action2">
                       Authors
                     </Nav.Link>
-                    <Nav.Link id="6" href="#action2">
+                    <Nav.Link href="#action2">
                       Series
                     </Nav.Link>
-                    <Nav.Link id="7" href="#action2">
+                    <Nav.Link  href="#action2">
                       Genre
                     </Nav.Link>
-                    <Nav.Link id="8" href="#action2">
+                    <Nav.Link href="#action2">
                       Favorites
                     </Nav.Link>
-                    <Nav.Link id="9" href="#action2">
+                    <Nav.Link  href="#action2">
                       Reading List
                     </Nav.Link>
                   </Nav>

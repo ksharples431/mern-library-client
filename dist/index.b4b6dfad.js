@@ -27300,9 +27300,8 @@ const MainView = ()=>{
                                     children: "The list is empty!"
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: books.map((book)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bookList.BookList), {
-                                            book: book,
-                                            id: "book.id"
-                                        }, void 0, false, void 0, void 0))
+                                            book: book
+                                        }, book.id, false, void 0, void 0))
                                 }, void 0, false)
                             }, void 0, false)
                         }, void 0, false, {
@@ -27312,15 +27311,15 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/profile",
-                            element: (0, _profile.Profile)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profile.Profile), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 140,
+                            lineNumber: 141,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/authors",
-                            element: (0, _authors.Authors)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _authors.Authors), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 142,
@@ -27328,7 +27327,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/genres",
-                            element: (0, _genres.Genres)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _genres.Genres), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 143,
@@ -27336,7 +27335,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/series",
-                            element: (0, _series.Series)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _series.Series), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 144,
@@ -27344,7 +27343,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/favorites",
-                            element: (0, _favorites.Favorites)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favorites.Favorites), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 145,
@@ -27352,7 +27351,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/que",
-                            element: (0, _que.Que)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _que.Que), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 146,
@@ -27360,7 +27359,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/owned",
-                            element: (0, _owned.Owned)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _owned.Owned), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 147,
@@ -27368,7 +27367,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/read",
-                            element: (0, _read.Read)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _read.Read), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 148,
@@ -27376,7 +27375,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/type",
-                            element: (0, _type.Type)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _type.Type), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 149,
@@ -27384,7 +27383,7 @@ const MainView = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/availability",
-                            element: (0, _availability.Availability)
+                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _availability.Availability), {}, void 0, false, void 0, void 0)
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 150,
@@ -47502,7 +47501,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                             className: "justify-content-end flex-grow-1 pe-3",
                                             children: [
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "0",
                                                     href: "/",
                                                     children: "Home"
                                                 }, void 0, false, {
@@ -47511,7 +47509,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "1",
                                                     onClick: onLoggedOut,
                                                     href: "/login",
                                                     children: "Login"
@@ -47521,7 +47518,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "2",
                                                     onClick: onLoggedOut,
                                                     href: "/signup",
                                                     children: "Signup"
@@ -47531,7 +47527,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "3",
                                                     onClick: onLoggedOut,
                                                     href: "/login",
                                                     children: "Logout"
@@ -47541,7 +47536,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "4",
                                                     href: "/",
                                                     children: "Titles"
                                                 }, void 0, false, {
@@ -47550,7 +47544,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "5",
                                                     href: "#action2",
                                                     children: "Authors"
                                                 }, void 0, false, {
@@ -47559,7 +47552,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "6",
                                                     href: "#action2",
                                                     children: "Series"
                                                 }, void 0, false, {
@@ -47568,7 +47560,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "7",
                                                     href: "#action2",
                                                     children: "Genre"
                                                 }, void 0, false, {
@@ -47577,7 +47568,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "8",
                                                     href: "#action2",
                                                     children: "Favorites"
                                                 }, void 0, false, {
@@ -47586,7 +47576,6 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navDefault.default).Link, {
-                                                    id: "9",
                                                     href: "#action2",
                                                     children: "Reading List"
                                                 }, void 0, false, {
@@ -47622,7 +47611,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                     lineNumber: 16,
                     columnNumber: 11
                 }, undefined)
-            }, void 0, false, {
+            }, expand, false, {
                 fileName: "src/shared/components/nav-bar/nav-bar.jsx",
                 lineNumber: 15,
                 columnNumber: 9
