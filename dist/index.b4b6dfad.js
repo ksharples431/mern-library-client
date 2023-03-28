@@ -27291,7 +27291,7 @@ const MainView = ()=>{
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/",
+                            path: "/books",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                     to: "/login",
@@ -27316,14 +27316,6 @@ const MainView = ()=>{
                         }, void 0, false, {
                             fileName: "src/shared/main-view/main-view.jsx",
                             lineNumber: 140,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/books",
-                            element: (0, _titles.Books)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 141,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27426,7 +27418,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../main-view/main-view":"2R1bU","../../users/pages/signup/signup":"21U06","../../users/pages/login/login":"gCYRk","../../users/pages/profile/profile":"bbAhk","../../books/pages/titles/titles":"fiYiY","../../books/pages/authors/authors":"9JV7p","../../books/pages/genres/genres":"jarb7","../../books/pages/series/series":"7QQiD","../../books/pages/favorites/favorites":"6aKaL","../../books/pages/que/que":"jBF5O","../../books/pages/owned/owned":"7cb1S","../../books/pages/read/read":"8V4y7","../../books/pages/type/type":"feCIU","../../books/pages/availability/availability":"aUnvb","./main-view.scss":"citCa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../books/components/book-list/book-list":"93u2q","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../../books/components/book-view/book-view":"ge37p","../../books/components/book-card/book-card":"7mbau","../../shared/components/nav-bar/nav-bar.jsx":"6LeHN"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../main-view/main-view":"2R1bU","../../users/pages/signup/signup":"21U06","../../users/pages/login/login":"gCYRk","../../users/pages/profile/profile":"bbAhk","../../books/pages/titles/titles":"fiYiY","../../books/pages/authors/authors":"9JV7p","../../books/pages/genres/genres":"jarb7","../../books/pages/series/series":"7QQiD","../../books/pages/favorites/favorites":"6aKaL","../../books/pages/que/que":"jBF5O","../../books/pages/owned/owned":"7cb1S","../../books/pages/read/read":"8V4y7","../../books/pages/type/type":"feCIU","../../books/pages/availability/availability":"aUnvb","./main-view.scss":"citCa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../books/components/book-list/book-list":"93u2q","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../../books/components/book-view/book-view":"ge37p","../../shared/components/nav-bar/nav-bar.jsx":"6LeHN","../../books/components/book-card/book-card":"7mbau"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.9.0
  *
@@ -35520,28 +35512,298 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./login.scss":"btfFQ"}],"btfFQ":[function() {},{}],"bbAhk":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a8bc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a8bc.prelude(module);
 
-},{}],"fiYiY":[function(require,module,exports) {
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Profile", ()=>Profile);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Profile = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Profile"
+    }, void 0, false, {
+        fileName: "src/users/pages/profile/profile.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Profile;
+var _c;
+$RefreshReg$(_c, "Profile");
 
-},{}],"9JV7p":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$a8bc.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fiYiY":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$534a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$534a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Books", ()=>Books);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Books = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Titles"
+    }, void 0, false, {
+        fileName: "src/books/pages/titles/titles.jsx",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Books;
+var _c;
+$RefreshReg$(_c, "Books");
+
+  $parcel$ReactRefreshHelpers$534a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9JV7p":[function(require,module,exports) {
 
 },{}],"jarb7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b50c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b50c.prelude(module);
 
-},{}],"7QQiD":[function(require,module,exports) {
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Genres", ()=>Genres);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Genres = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Genres"
+    }, void 0, false, {
+        fileName: "src/books/pages/genres/genres.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Genres;
+var _c;
+$RefreshReg$(_c, "Genres");
 
-},{}],"6aKaL":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$b50c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7QQiD":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$690d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$690d.prelude(module);
 
-},{}],"jBF5O":[function(require,module,exports) {
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Series", ()=>Series);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Series = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Series"
+    }, void 0, false, {
+        fileName: "src/books/pages/series/series.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Series;
+var _c;
+$RefreshReg$(_c, "Series");
 
-},{}],"7cb1S":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$690d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6aKaL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f037 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f037.prelude(module);
 
-},{}],"8V4y7":[function(require,module,exports) {
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Favorites", ()=>Favorites);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Favorites = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Favorites"
+    }, void 0, false, {
+        fileName: "src/books/pages/favorites/favorites.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Favorites;
+var _c;
+$RefreshReg$(_c, "Favorites");
 
-},{}],"feCIU":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$f037.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jBF5O":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d6cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d6cd.prelude(module);
 
-},{}],"aUnvb":[function(require,module,exports) {
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Que", ()=>Que);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Que = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Que"
+    }, void 0, false, {
+        fileName: "src/books/pages/que/que.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Que;
+var _c;
+$RefreshReg$(_c, "Que");
 
-},{}],"citCa":[function() {},{}],"93u2q":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$d6cd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7cb1S":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1bda = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1bda.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Owned", ()=>Owned);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Owned = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Owned"
+    }, void 0, false, {
+        fileName: "src/books/pages/owned/owned.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Owned;
+var _c;
+$RefreshReg$(_c, "Owned");
+
+  $parcel$ReactRefreshHelpers$1bda.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8V4y7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$20e3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$20e3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Read", ()=>Read);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Read = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Read"
+    }, void 0, false, {
+        fileName: "src/books/pages/read/read.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Read;
+var _c;
+$RefreshReg$(_c, "Read");
+
+  $parcel$ReactRefreshHelpers$20e3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"feCIU":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$12e2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$12e2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Type", ()=>Type);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Type = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Type"
+    }, void 0, false, {
+        fileName: "src/books/pages/type/type.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Type;
+var _c;
+$RefreshReg$(_c, "Type");
+
+  $parcel$ReactRefreshHelpers$12e2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aUnvb":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fec3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fec3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Availability", ()=>Availability);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Availability = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Availability"
+    }, void 0, false, {
+        fileName: "src/books/pages/availability/availability.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Availability;
+var _c;
+$RefreshReg$(_c, "Availability");
+
+  $parcel$ReactRefreshHelpers$fec3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"citCa":[function() {},{}],"93u2q":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$281f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47091,42 +47353,7 @@ Tooltip.defaultProps = defaultProps;
 Tooltip.displayName = "Tooltip";
 exports.default = Tooltip;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./helpers":"gotcT","./getInitialPopperStyles":"c8j3Q","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jGaYa":[function() {},{}],"7mbau":[function(require,module,exports) {
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import { Button, Card } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
-// export const BookCard = ({ book }) => {
-//   return (
-//     <Card className="h-100">
-//       <Card.Img variant="top" src={book.image} />
-//       <Card.Body>
-//         <Card.Title>{book.title}</Card.Title>
-//         <Card.Text>{book.author}</Card.Text>
-//         <Link to={`/books/${encodeURIComponent(book.id)}`}>
-//           <Button variant="link">Open</Button>
-//         </Link>
-//       </Card.Body>
-//     </Card>
-//   );
-// };
-// BookCard.propTypes = {
-//   book: PropTypes.shape({
-//     image: PropTypes.string,
-//     title: PropTypes.string.isRequired,
-//     author: PropTypes.string.isRequired,
-//     genre: PropTypes.string,
-//     series: PropTypes.string,
-//     number: PropTypes.number,
-//     description: PropTypes.string,
-//     owned: PropTypes.bool,
-//     // availability: PropTypes.array,
-//     read: PropTypes.bool,
-//     favorite: PropTypes.bool,
-//   }).isRequired,
-// };
-
-},{}],"6LeHN":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./helpers":"gotcT","./getInitialPopperStyles":"c8j3Q","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jGaYa":[function() {},{}],"6LeHN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a936 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47411,6 +47638,41 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-bootstrap/Button":"aPzUt","react-bootstrap/Container":"hEdsw","react-bootstrap/Form":"iBZ80","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Offcanvas":"eC3RS","./nav-bar.scss":"2cM97","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2cM97":[function() {},{}],"lJZlQ":[function() {},{}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-bootstrap/Button":"aPzUt","react-bootstrap/Container":"hEdsw","react-bootstrap/Form":"iBZ80","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Offcanvas":"eC3RS","./nav-bar.scss":"2cM97","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2cM97":[function() {},{}],"7mbau":[function(require,module,exports) {
+// import React from 'react';
+// import PropTypes from 'prop-types';
+// import { Button, Card } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
+// export const BookCard = ({ book }) => {
+//   return (
+//     <Card className="h-100">
+//       <Card.Img variant="top" src={book.image} />
+//       <Card.Body>
+//         <Card.Title>{book.title}</Card.Title>
+//         <Card.Text>{book.author}</Card.Text>
+//         <Link to={`/books/${encodeURIComponent(book.id)}`}>
+//           <Button variant="link">Open</Button>
+//         </Link>
+//       </Card.Body>
+//     </Card>
+//   );
+// };
+// BookCard.propTypes = {
+//   book: PropTypes.shape({
+//     image: PropTypes.string,
+//     title: PropTypes.string.isRequired,
+//     author: PropTypes.string.isRequired,
+//     genre: PropTypes.string,
+//     series: PropTypes.string,
+//     number: PropTypes.number,
+//     description: PropTypes.string,
+//     owned: PropTypes.bool,
+//     // availability: PropTypes.array,
+//     read: PropTypes.bool,
+//     favorite: PropTypes.bool,
+//   }).isRequired,
+// };
+
+},{}],"lJZlQ":[function() {},{}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

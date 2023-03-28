@@ -118,7 +118,7 @@ export const MainView = () => {
             }
           />
           <Route
-            path="/"
+            path="/books"
             element={
               <>
                 {!user ? (
@@ -138,7 +138,7 @@ export const MainView = () => {
           {/* <Route path="/signup" element={Signup} />
           <Route path="/login" element={Login} /> */}
           <Route path="/profile" element={Profile} />
-          <Route path="/books" element={Books} />
+          {/* <Route path="/books" element={Books} /> */}
           <Route path="/authors" element={Authors} />
           <Route path="/genres" element={Genres} />
           <Route path="/series" element={Series} />
