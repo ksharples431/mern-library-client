@@ -18,6 +18,7 @@ import { Availability } from '../../books/pages/availability/availability';
 import { BookList } from '../../books/components/book-list/book-list';
 import { BookView } from '../../books/components/book-view/book-view';
 import { BookCard } from '../../books/components/book-card/book-card';
+import { NavigationBar } from '../../shared/components/nav-bar/nav-bar.jsx';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './main-view.scss';
@@ -62,6 +63,14 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
+      <NavigationBar
+        user={user}
+        onLoggedOut={() => {
+          setUser(null);
+          setToken(null);
+          localStorage.clear();
+        }}
+      />
       <Row className="justify-content-md-center">
         <Routes>
           <Route
@@ -119,7 +128,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     {books.map((book) => (
-                      <BookList book={book} />
+                      <BookList book={book} id="book.id" />
                     ))}
                   </>
                 )}

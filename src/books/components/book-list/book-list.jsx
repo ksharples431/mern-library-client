@@ -21,19 +21,19 @@ export const BookList = ({ book }) => {
           {book.author}
         </div>
         <Button className="button" bg="primary">
-          <i class="fi fi-rr-headphones"></i>
+          <i className="fi fi-rr-headphones"></i>
         </Button>
         <Button className="button" bg="primary">
-          <i class="fi fi-rr-heart"></i>
+          <i className="fi fi-rr-heart"></i>
         </Button>
         <Button className="button" bg="primary">
-          <i class="fi fi-rr-heart"></i>
+          <i className="fi fi-rr-heart"></i>
         </Button>
         <Button className="button" bg="primary">
-          <i class="fi fi-rr-heart"></i>
+          <i className="fi fi-rr-heart"></i>
         </Button>
         <Button className="button" bg="primary">
-          <i class="fi fi-rr-heart"></i>
+          <i className="fi fi-rr-heart"></i>
         </Button>
       </ListGroup.Item>
     </ListGroup>
