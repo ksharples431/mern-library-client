@@ -6,7 +6,7 @@ import { SignupView } from '../../users/pages/signup/signup';
 import { LoginView } from '../../users/pages/login/login';
 import { Profile } from '../../users/pages/profile/profile';
 import { Books } from '../../books/pages/titles/titles';
-import { Authors } from '../../books/pages/authors/authors';
+// import { Authors } from '../../books/pages/authors/authors';
 import { Genres } from '../../books/pages/genres/genres';
 import { Series } from '../../books/pages/series/series';
 import { Favorites } from '../../books/pages/favorites/favorites';
@@ -16,6 +16,7 @@ import { Read } from '../../books/pages/read/read';
 import { Type } from '../../books/pages/type/type';
 import { Availability } from '../../books/pages/availability/availability';
 import { BookList } from '../../books/components/book-list/book-list';
+import { AuthorList, Authors } from '../../books/pages/authors/components/author-list';
 import { BookView } from '../../books/components/book-view/book-view';
 import { BookCard } from '../../books/components/book-card/book-card';
 import { NavigationBar } from '../../shared/components/nav-bar/nav-bar.jsx';
@@ -35,7 +36,7 @@ export const MainView = () => {
 
     async function fetchBooks() {
       const response = await fetch(
-        'https://my-books-series-tracker.herokuapp.com/books',
+        'https://my-books-series-tracker.herokuapp.com/authors',
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -135,11 +136,32 @@ export const MainView = () => {
               </>
             }
           />
+          <Route
+            path="/authors"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : books.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <>
+                    {books.map((book) => (
+                      <>
+                      <Authors book={book} key={book.id} />
+                      <AuthorList book={book} key={book.id} />
+                      </>
+                    ))}
+                  </>
+                )}
+              </>
+            }
+          />
           {/* <Route path="/signup" element={Signup} />
           <Route path="/login" element={Login} /> */}
           {/* <Route path="/books" element={Books} /> */}
+          {/* <Route path="/authors" element={<Authors />} /> */}
           <Route path="/profile" element={<Profile />} />
-          <Route path="/authors" element={<Authors />} />
           <Route path="/genres" element={<Genres />} />
           <Route path="/series" element={<Series />} />
           <Route path="/favorites" element={<Favorites />} />
