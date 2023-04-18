@@ -16,7 +16,7 @@ export const BookView = ({ books }) => {
         <Card.Text>Author: {book.author}</Card.Text>
         <Card.Text>Genre: {book.genre}</Card.Text>
         <Card.Text>Series: {book.series}</Card.Text>
-        <Card.Text>Book: {book.number}</Card.Text>
+        <Card.Text>Book: {book.seriesNumber}</Card.Text>
         <Card.Text>Description: {book.description}</Card.Text>
         <Card.Text>Owned: {book.owned}</Card.Text>
         <Card.Text>Read: {book.read}</Card.Text>

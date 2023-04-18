@@ -4,40 +4,46 @@ import Form from 'react-bootstrap/Form';
 
 import './signup.scss';
 
-export const SignupView = ({ onLoggedIn }) => {
+export const SignupView = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
+  // const storedToken = localStorage.getItem('token');
+  // const [token, setToken] = useState(storedToken ? storedToken : null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const data = {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthday: birthday,
+      username: username,
+      password: password,
+      email: email,
+      image: image,
+      birthday: birthday,
     };
 
-    fetch('https://my-books-series-tracker.herokuapp.com/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert('Signup successful');
-          window.location.reload();
-        } else {
-          alert('Signup failed');
+    try {
+      const response = await fetch(
+        'http://localhost:5000/api/auth/signup',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
         }
-      })
-      .catch((e) => {
-        alert('Something went wrong');
-      });
+      );
+      if (response.ok) {
+        alert('Signup successful');
+        window.location.replace('/');
+      } else {
+        throw new Error('Signup failed');
+      }
+    } catch (error) {
+      console.error('Error occurred while signup:', error);
+      alert('Something went wrong');
+    }
   };
 
   return (
@@ -83,7 +89,7 @@ export const SignupView = ({ onLoggedIn }) => {
           onChange={(e) => setBirthday(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" href="/" >
+      <Button variant="primary" type="submit" href="/">
         Submit
       </Button>
     </Form>

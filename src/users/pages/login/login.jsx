@@ -5,48 +5,56 @@ import Form from 'react-bootstrap/Form';
 import './login.scss';
 
 export const LoginView = ({ onLoggedIn }) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const handleSubmit = (event) => {
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const data = {
-      Username: username,
-      Password: password,
+      email: email,
+      password: password,
     };
 
-    fetch('https://my-books-series-tracker.herokuapp.com/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Login response: ', data);
-        if (data.user) {
-          localStorage.setItem('user', JSON.stringify(data.user));
-          localStorage.setItem('token', data.token);
-          onLoggedIn(data.user, data.token);
-        } else {
-          alert('No such user');
+    try {
+      const response = await fetch(
+        'http://localhost:5000/api/auth/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
         }
-      })
-      .catch((e) => {
-        alert('Something went wrong');
-      });
+      );
+
+      const responseData = await response.json();
+
+      console.log('Login response: ', responseData);
+
+      if (responseData.user) {
+        console.log(responseData)
+        localStorage.setItem('user', JSON.stringify(responseData.user));
+        localStorage.setItem('token', responseData.token);
+        onLoggedIn(responseData.user, responseData.token);
+      } else {
+        alert('No such user');
+      }
+    } catch (error) {
+      console.error('Error occurred while login:', error);
+      alert('Something went wrong');
+    }
   };
 
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Label className="loginLabel">Login</Form.Label>
       <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
+        <Form.Label>Email:</Form.Label>
         <Form.Control
           type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
           minLength="3"
         />

@@ -11,8 +11,8 @@ import './nav-bar.scss';
 export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
     <>
-      {[false].map((expand) => (
-        <div className="navbar-holder">
+      {[false].map((expand, i) => (
+        <div key={i} className="navbar-holder">
           <Navbar key={expand} expand={expand} className="mb-4 navbar">
             <Container fluid>
               <Navbar.Toggle

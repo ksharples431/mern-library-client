@@ -27193,25 +27193,23 @@ const MainView = ()=>{
     (0, _react.useEffect)(()=>{
         if (!token) return;
         async function fetchBooks() {
-            const response = await fetch("https://my-books-series-tracker.herokuapp.com/books", {
+            const response = await fetch("http://localhost:5000/api/books", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
             const data = await response.json();
             const booksFromAPI = data.map((book)=>{
+                console.log(book);
                 return {
                     id: book._id,
-                    image: book.image,
                     title: book.title,
                     author: book.author,
+                    image: book.image,
+                    description: book.description,
                     genre: book.genre,
                     series: book.series,
-                    number: book.number,
-                    description: book.description,
-                    owned: book.owned,
-                    read: book.read,
-                    favorite: book.favorite
+                    seriesNumber: book.seriesNumber
                 };
             });
             setBooks(booksFromAPI);
@@ -27231,7 +27229,7 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/shared/main-view/main-view.jsx",
-                lineNumber: 66,
+                lineNumber: 61,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27248,9 +27246,9 @@ const MainView = ()=>{
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signup.SignupView), {}, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
-                        }, void 0, false, {
+                        }, "signup", false, {
                             fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 76,
+                            lineNumber: 71,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27265,9 +27263,9 @@ const MainView = ()=>{
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
-                        }, void 0, false, {
+                        }, "login", false, {
                             fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 90,
+                            lineNumber: 86,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27285,13 +27283,13 @@ const MainView = ()=>{
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
-                        }, void 0, false, {
+                        }, "book", false, {
                             fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 104,
+                            lineNumber: 101,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/books",
+                            path: "/",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                     to: "/login",
@@ -27299,112 +27297,32 @@ const MainView = ()=>{
                                 }, void 0, false, void 0, void 0) : books.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     children: "The list is empty!"
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                                    children: books.map((book)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bookList.BookList), {
+                                    children: books.map((book, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bookList.BookList), {
                                             book: book,
                                             id: "book.id"
-                                        }, void 0, false, void 0, void 0))
+                                        }, i, false, void 0, void 0))
                                 }, void 0, false)
                             }, void 0, false)
-                        }, void 0, false, {
+                        }, "books", false, {
                             fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 120,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/profile",
-                            element: (0, _profile.Profile)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 140,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/authors",
-                            element: (0, _authors.Authors)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 142,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/genres",
-                            element: (0, _genres.Genres)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 143,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/series",
-                            element: (0, _series.Series)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 144,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/favorites",
-                            element: (0, _favorites.Favorites)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 145,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/que",
-                            element: (0, _que.Que)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 146,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/owned",
-                            element: (0, _owned.Owned)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 147,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/read",
-                            element: (0, _read.Read)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 148,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/type",
-                            element: (0, _type.Type)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 149,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/availability",
-                            element: (0, _availability.Availability)
-                        }, void 0, false, {
-                            fileName: "src/shared/main-view/main-view.jsx",
-                            lineNumber: 150,
+                            lineNumber: 118,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/shared/main-view/main-view.jsx",
-                    lineNumber: 75,
+                    lineNumber: 70,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/shared/main-view/main-view.jsx",
-                lineNumber: 74,
+                lineNumber: 69,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/shared/main-view/main-view.jsx",
-        lineNumber: 65,
+        lineNumber: 60,
         columnNumber: 5
     }, undefined);
 };
@@ -32612,34 +32530,39 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _signupScss = require("./signup.scss");
 var _s = $RefreshSig$();
-const SignupView = ({ onLoggedIn  })=>{
+const SignupView = ()=>{
     _s();
     const [username, setUsername] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
-    const handleSubmit = (event)=>{
+    // const storedToken = localStorage.getItem('token');
+    // const [token, setToken] = useState(storedToken ? storedToken : null);
+    const handleSubmit = async (event)=>{
         event.preventDefault();
         const data = {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
+            username: username,
+            password: password,
+            email: email,
+            image: image,
+            birthday: birthday
         };
-        fetch("https://my-books-series-tracker.herokuapp.com/users", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then((response)=>{
+        try {
+            const response = await fetch("http://localhost:5000/api/auth/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
             if (response.ok) {
                 alert("Signup successful");
-                window.location.reload();
-            } else alert("Signup failed");
-        }).catch((e)=>{
+                window.location.replace("/");
+            } else throw new Error("Signup failed");
+        } catch (error) {
+            console.error("Error occurred while signup:", error);
             alert("Something went wrong");
-        });
+        }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
         onSubmit: handleSubmit,
@@ -32649,7 +32572,7 @@ const SignupView = ({ onLoggedIn  })=>{
                 children: "Signup"
             }, void 0, false, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 45,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32659,7 +32582,7 @@ const SignupView = ({ onLoggedIn  })=>{
                         children: "Username:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 47,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32670,13 +32593,13 @@ const SignupView = ({ onLoggedIn  })=>{
                         minLength: "3"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 48,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 46,
+                lineNumber: 52,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32686,7 +32609,7 @@ const SignupView = ({ onLoggedIn  })=>{
                         children: "Password:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 58,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32697,13 +32620,13 @@ const SignupView = ({ onLoggedIn  })=>{
                         minLength: "7"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 59,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 57,
+                lineNumber: 63,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32713,7 +32636,7 @@ const SignupView = ({ onLoggedIn  })=>{
                         children: "Email:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 69,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32723,13 +32646,13 @@ const SignupView = ({ onLoggedIn  })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 70,
+                        lineNumber: 76,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 68,
+                lineNumber: 74,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32739,7 +32662,7 @@ const SignupView = ({ onLoggedIn  })=>{
                         children: "Birthday:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 79,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32748,13 +32671,13 @@ const SignupView = ({ onLoggedIn  })=>{
                         onChange: (e)=>setBirthday(e.target.value)
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 80,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 78,
+                lineNumber: 84,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -32764,13 +32687,13 @@ const SignupView = ({ onLoggedIn  })=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 86,
+                lineNumber: 92,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/users/pages/signup/signup.jsx",
-        lineNumber: 44,
+        lineNumber: 50,
         columnNumber: 5
     }, undefined);
 };
@@ -35396,30 +35319,34 @@ var _loginScss = require("./login.scss");
 var _s = $RefreshSig$();
 const LoginView = ({ onLoggedIn  })=>{
     _s();
-    const [username, setUsername] = (0, _react.useState)("");
+    const [email, setEmail] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
-    const handleSubmit = (event)=>{
+    const handleSubmit = async (event)=>{
         event.preventDefault();
         const data = {
-            Username: username,
-            Password: password
+            email: email,
+            password: password
         };
-        fetch("https://my-books-series-tracker.herokuapp.com/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then((response)=>response.json()).then((data)=>{
-            console.log("Login response: ", data);
-            if (data.user) {
-                localStorage.setItem("user", JSON.stringify(data.user));
-                localStorage.setItem("token", data.token);
-                onLoggedIn(data.user, data.token);
+        try {
+            const response = await fetch("http://localhost:5000/api/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            const responseData = await response.json();
+            console.log("Login response: ", responseData);
+            if (responseData.user) {
+                console.log(responseData);
+                localStorage.setItem("user", JSON.stringify(responseData.user));
+                localStorage.setItem("token", responseData.token);
+                onLoggedIn(responseData.user, responseData.token);
             } else alert("No such user");
-        }).catch((e)=>{
+        } catch (error) {
+            console.error("Error occurred while login:", error);
             alert("Something went wrong");
-        });
+        }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
         onSubmit: handleSubmit,
@@ -35429,34 +35356,34 @@ const LoginView = ({ onLoggedIn  })=>{
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 43,
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
                 controlId: "formUsername",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Label, {
-                        children: "Username:"
+                        children: "Email:"
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 45,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                         type: "text",
-                        value: username,
-                        onChange: (e)=>setUsername(e.target.value),
+                        value: email,
+                        onChange: (e)=>setEmail(e.target.value),
                         required: true,
                         minLength: "3"
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 46,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 44,
+                lineNumber: 52,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -35466,7 +35393,7 @@ const LoginView = ({ onLoggedIn  })=>{
                         children: "Password:"
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 56,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -35476,13 +35403,13 @@ const LoginView = ({ onLoggedIn  })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 57,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 55,
+                lineNumber: 63,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -35491,17 +35418,17 @@ const LoginView = ({ onLoggedIn  })=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 64,
+                lineNumber: 72,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/users/pages/login/login.jsx",
-        lineNumber: 42,
+        lineNumber: 50,
         columnNumber: 5
     }, undefined);
 };
-_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
+_s(LoginView, "TSZhDBNy8CmbxXgprY/vvMmTG1Q=");
 _c = LoginView;
 var _c;
 $RefreshReg$(_c, "LoginView");
@@ -35908,7 +35835,7 @@ const BookView = ({ books  })=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                         children: [
                             "Book: ",
-                            book.number
+                            book.seriesNumber
                         ]
                     }, void 0, true, {
                         fileName: "src/books/components/book-view/book-view.jsx",
@@ -47213,7 +47140,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             false
-        ].map((expand)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        ].map((expand, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "navbar-holder",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default), {
                     expand: expand,
@@ -47452,7 +47379,7 @@ const NavigationBar = ({ user , onLoggedOut  })=>{
                     lineNumber: 16,
                     columnNumber: 11
                 }, undefined)
-            }, void 0, false, {
+            }, i, false, {
                 fileName: "src/shared/components/nav-bar/nav-bar.jsx",
                 lineNumber: 15,
                 columnNumber: 9
@@ -47655,12 +47582,8 @@ BookList.propTypes = {
         author: (0, _propTypesDefault.default).string.isRequired,
         genre: (0, _propTypesDefault.default).string,
         series: (0, _propTypesDefault.default).string,
-        number: (0, _propTypesDefault.default).number,
-        description: (0, _propTypesDefault.default).string,
-        owned: (0, _propTypesDefault.default).bool,
-        // availability: PropTypes.array,
-        read: (0, _propTypesDefault.default).bool,
-        favorite: (0, _propTypesDefault.default).bool
+        seriesNumber: (0, _propTypesDefault.default).string,
+        description: (0, _propTypesDefault.default).string
     }).isRequired
 };
 var _c;

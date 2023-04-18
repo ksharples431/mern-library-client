@@ -34,26 +34,21 @@ export const MainView = () => {
     if (!token) return;
 
     async function fetchBooks() {
-      const response = await fetch(
-        'https://my-books-series-tracker.herokuapp.com/books',
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
+      const response = await fetch('http://localhost:5000/api/books', {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       const data = await response.json();
       const booksFromAPI = data.map((book) => {
+        console.log(book)
         return {
           id: book._id,
-          image: book.image,
           title: book.title,
           author: book.author,
+          image: book.image,
+          description: book.description,
           genre: book.genre,
           series: book.series,
-          number: book.number,
-          description: book.description,
-          owned: book.owned,
-          read: book.read,
-          favorite: book.favorite,
+          seriesNumber: book.seriesNumber,
         };
       });
       setBooks(booksFromAPI);
@@ -75,6 +70,7 @@ export const MainView = () => {
         <Routes>
           <Route
             path="/signup"
+            key="signup"
             element={
               <>
                 {user ? (
@@ -89,6 +85,7 @@ export const MainView = () => {
           />
           <Route
             path="/login"
+            key="login"
             element={
               <>
                 {user ? (
@@ -103,6 +100,7 @@ export const MainView = () => {
           />
           <Route
             path="/books/:bookId"
+            key="book"
             element={
               <>
                 {!user ? (
@@ -118,7 +116,8 @@ export const MainView = () => {
             }
           />
           <Route
-            path="/books"
+            path="/"
+            key="books"
             element={
               <>
                 {!user ? (
@@ -127,8 +126,8 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {books.map((book) => (
-                      <BookList book={book} id="book.id" />
+                    {books.map((book, i) => (
+                      <BookList book={book} key={i} id="book.id" />
                     ))}
                   </>
                 )}
@@ -137,17 +136,17 @@ export const MainView = () => {
           />
           {/* <Route path="/signup" element={Signup} />
           <Route path="/login" element={Login} /> */}
-          <Route path="/profile" element={Profile} />
+          {/* <Route path="/profile" element={Profile} /> */}
           {/* <Route path="/books" element={Books} /> */}
-          <Route path="/authors" element={Authors} />
-          <Route path="/genres" element={Genres} />
-          <Route path="/series" element={Series} />
-          <Route path="/favorites" element={Favorites} />
-          <Route path="/que" element={Que} />
-          <Route path="/owned" element={Owned} />
-          <Route path="/read" element={Read} />
-          <Route path="/type" element={Type} />
-          <Route path="/availability" element={Availability} />
+          {/* <Route path="/authors" element={Authors} /> */}
+          {/* <Route path="/genres" element={Genres} /> */}
+          {/* <Route path="/series" element={Series} /> */}
+          {/* <Route path="/favorites" element={Favorites} /> */}
+          {/* <Route path="/que" element={Que} /> */}
+          {/* <Route path="/owned" element={Owned} /> */}
+          {/* <Route path="/read" element={Read} /> */}
+          {/* <Route path="/type" element={Type} /> */}
+          {/* <Route path="/availability" element={Availability} /> */}
         </Routes>
       </Row>
     </BrowserRouter>
