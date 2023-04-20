@@ -9,8 +9,6 @@ export const SignupView = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
-  // const storedToken = localStorage.getItem('token');
-  // const [token, setToken] = useState(storedToken ? storedToken : null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
