@@ -89,7 +89,7 @@ export const MainView = () => {
             element={
               <>
                 {user ? (
-                  <Navigate to="/" replace />
+                  <Navigate to="/" />
                 ) : (
                   <Col md={5}>
                     <LoginView onLoggedIn={(user) => setUser(user)} />

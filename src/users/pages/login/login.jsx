@@ -32,16 +32,20 @@ export const LoginView = ({ onLoggedIn }) => {
 
       console.log('Login response: ', responseData);
 
-      if (responseData) {
-        localStorage.setItem('user', JSON.stringify(responseData.userId));
+      if (responseData.user) {
+        console.log(responseData)
+        localStorage.setItem('user', JSON.stringify(responseData.user));
         localStorage.setItem('token', responseData.token);
+        onLoggedIn(responseData.user, responseData.token);
       } else {
         alert('No such user');
       }
     } catch (error) {
       console.error('Error occurred while login:', error);
+      alert('Something went wrong');
     }
   };
+
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Label className="loginLabel">Login</Form.Label>
