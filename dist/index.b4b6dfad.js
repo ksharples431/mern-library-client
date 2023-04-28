@@ -27159,24 +27159,24 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
-var _mainView = require("../main-view/main-view");
 var _signup = require("../../users/pages/signup/signup");
 var _login = require("../../users/pages/login/login");
-var _profile = require("../../users/pages/profile/profile");
-var _titles = require("../../books/pages/titles/titles");
-var _authors = require("../../books/pages/authors/authors");
-var _genres = require("../../books/pages/genres/genres");
-var _series = require("../../books/pages/series/series");
-var _favorites = require("../../books/pages/favorites/favorites");
-var _que = require("../../books/pages/que/que");
-var _owned = require("../../books/pages/owned/owned");
-var _read = require("../../books/pages/read/read");
-var _type = require("../../books/pages/type/type");
-var _availability = require("../../books/pages/availability/availability");
 var _bookList = require("../../books/components/book-list/book-list");
 var _bookView = require("../../books/components/book-view/book-view");
-var _bookCard = require("../../books/components/book-card/book-card");
 var _navBarJsx = require("../../shared/components/nav-bar/nav-bar.jsx");
+// import { Home } from '../main-view/main-view';
+// import { Profile } from '../../users/pages/profile/profile';
+// import { Books } from '../../books/pages/titles/titles';
+// import { Authors } from '../../books/pages/authors/authors';
+// import { Genres } from '../../books/pages/genres/genres';
+// import { Series } from '../../books/pages/series/series';
+// import { Favorites } from '../../books/pages/favorites/favorites';
+// import { Que } from '../../books/pages/que/que';
+// import { Owned } from '../../books/pages/owned/owned';
+// import { Read } from '../../books/pages/read/read';
+// import { Type } from '../../books/pages/type/type';
+// import { Availability } from '../../books/pages/availability/availability';
+// import { BookCard } from '../../books/components/book-card/book-card';
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
@@ -27243,7 +27243,12 @@ const MainView = ()=>{
                                     to: "/"
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 5,
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signup.SignupView), {}, void 0, false, void 0, void 0)
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signup.SignupView), {
+                                        onLoggedIn: (user, token)=>{
+                                            setUser(user);
+                                            setToken(token);
+                                        }
+                                    }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
                         }, "signup", false, {
@@ -27259,7 +27264,10 @@ const MainView = ()=>{
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _login.LoginView), {
-                                        onLoggedIn: (user)=>setUser(user)
+                                        onLoggedIn: (user, token)=>{
+                                            setUser(user);
+                                            setToken(token);
+                                        }
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
@@ -27336,7 +27344,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../main-view/main-view":"2R1bU","../../users/pages/signup/signup":"21U06","../../users/pages/login/login":"gCYRk","../../users/pages/profile/profile":"bbAhk","../../books/pages/titles/titles":"fiYiY","../../books/pages/genres/genres":"jarb7","../../books/pages/series/series":"7QQiD","../../books/pages/favorites/favorites":"6aKaL","../../books/pages/que/que":"jBF5O","../../books/pages/owned/owned":"7cb1S","../../books/pages/read/read":"8V4y7","../../books/pages/type/type":"feCIU","../../books/pages/availability/availability":"aUnvb","./main-view.scss":"citCa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../../books/components/book-view/book-view":"ge37p","../../shared/components/nav-bar/nav-bar.jsx":"6LeHN","../../books/components/book-card/book-card":"7mbau","../../books/components/book-list/book-list":"93u2q","../../books/pages/authors/authors":"9JV7p"}],"9xmpe":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../users/pages/signup/signup":"21U06","../../users/pages/login/login":"gCYRk","./main-view.scss":"citCa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../../books/components/book-view/book-view":"ge37p","../../shared/components/nav-bar/nav-bar.jsx":"6LeHN","../../books/components/book-list/book-list":"93u2q"}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.9.0
  *
@@ -32530,21 +32538,18 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _signupScss = require("./signup.scss");
 var _s = $RefreshSig$();
-const SignupView = ()=>{
+const SignupView = ({ onLoggedIn  })=>{
     _s();
     const [username, setUsername] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const [email, setEmail] = (0, _react.useState)("");
     const [birthday, setBirthday] = (0, _react.useState)("");
-    // const storedToken = localStorage.getItem('token');
-    // const [token, setToken] = useState(storedToken ? storedToken : null);
     const handleSubmit = async (event)=>{
         event.preventDefault();
         const data = {
             username: username,
             password: password,
             email: email,
-            image: image,
             birthday: birthday
         };
         try {
@@ -32555,12 +32560,17 @@ const SignupView = ()=>{
                 },
                 body: JSON.stringify(data)
             });
-            if (response.ok) {
+            const responseData = await response.json();
+            console.log("Login response: ", responseData);
+            if (responseData) {
                 alert("Signup successful");
-                window.location.replace("/");
+                localStorage.setItem("user", JSON.stringify(responseData.user));
+                localStorage.setItem("token", responseData.token);
+                onLoggedIn(responseData.user, responseData.token);
+            // window.location.replace('/');
             } else throw new Error("Signup failed");
         } catch (error) {
-            console.error("Error occurred while signup:", error);
+            console.error("Error occurred while trying to signup:", error);
             alert("Something went wrong");
         }
     };
@@ -32572,7 +32582,7 @@ const SignupView = ()=>{
                 children: "Signup"
             }, void 0, false, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 51,
+                lineNumber: 56,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32582,7 +32592,7 @@ const SignupView = ()=>{
                         children: "Username:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 53,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32593,13 +32603,13 @@ const SignupView = ()=>{
                         minLength: "3"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 54,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 52,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32609,7 +32619,7 @@ const SignupView = ()=>{
                         children: "Password:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 64,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32620,13 +32630,13 @@ const SignupView = ()=>{
                         minLength: "7"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 65,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 63,
+                lineNumber: 68,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32636,7 +32646,7 @@ const SignupView = ()=>{
                         children: "Email:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 75,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32646,13 +32656,13 @@ const SignupView = ()=>{
                         required: true
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 76,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 74,
+                lineNumber: 79,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -32662,7 +32672,7 @@ const SignupView = ()=>{
                         children: "Birthday:"
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 85,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -32671,13 +32681,13 @@ const SignupView = ()=>{
                         onChange: (e)=>setBirthday(e.target.value)
                     }, void 0, false, {
                         fileName: "src/users/pages/signup/signup.jsx",
-                        lineNumber: 86,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 84,
+                lineNumber: 89,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -32687,13 +32697,13 @@ const SignupView = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/users/pages/signup/signup.jsx",
-                lineNumber: 92,
+                lineNumber: 97,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/users/pages/signup/signup.jsx",
-        lineNumber: 50,
+        lineNumber: 55,
         columnNumber: 5
     }, undefined);
 };
@@ -35337,15 +35347,13 @@ const LoginView = ({ onLoggedIn  })=>{
             });
             const responseData = await response.json();
             console.log("Login response: ", responseData);
-            if (responseData.user) {
-                console.log(responseData);
+            if (responseData) {
                 localStorage.setItem("user", JSON.stringify(responseData.user));
                 localStorage.setItem("token", responseData.token);
                 onLoggedIn(responseData.user, responseData.token);
             } else alert("No such user");
         } catch (error) {
             console.error("Error occurred while login:", error);
-            alert("Something went wrong");
         }
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
@@ -35356,7 +35364,7 @@ const LoginView = ({ onLoggedIn  })=>{
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 51,
+                lineNumber: 48,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -35366,7 +35374,7 @@ const LoginView = ({ onLoggedIn  })=>{
                         children: "Email:"
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 53,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -35377,13 +35385,13 @@ const LoginView = ({ onLoggedIn  })=>{
                         minLength: "3"
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 54,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 52,
+                lineNumber: 49,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -35393,7 +35401,7 @@ const LoginView = ({ onLoggedIn  })=>{
                         children: "Password:"
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 64,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -35403,13 +35411,13 @@ const LoginView = ({ onLoggedIn  })=>{
                         required: true
                     }, void 0, false, {
                         fileName: "src/users/pages/login/login.jsx",
-                        lineNumber: 65,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 63,
+                lineNumber: 60,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -35418,13 +35426,13 @@ const LoginView = ({ onLoggedIn  })=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/users/pages/login/login.jsx",
-                lineNumber: 72,
+                lineNumber: 69,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/users/pages/login/login.jsx",
-        lineNumber: 50,
+        lineNumber: 47,
         columnNumber: 5
     }, undefined);
 };
@@ -35438,297 +35446,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./login.scss":"btfFQ"}],"btfFQ":[function() {},{}],"bbAhk":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a8bc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a8bc.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Profile", ()=>Profile);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Profile = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Profile"
-    }, void 0, false, {
-        fileName: "src/users/pages/profile/profile.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Profile;
-var _c;
-$RefreshReg$(_c, "Profile");
-
-  $parcel$ReactRefreshHelpers$a8bc.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fiYiY":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$534a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$534a.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Books", ()=>Books);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Books = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Titles"
-    }, void 0, false, {
-        fileName: "src/books/pages/titles/titles.jsx",
-        lineNumber: 3,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Books;
-var _c;
-$RefreshReg$(_c, "Books");
-
-  $parcel$ReactRefreshHelpers$534a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jarb7":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$b50c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$b50c.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Genres", ()=>Genres);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Genres = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Genres"
-    }, void 0, false, {
-        fileName: "src/books/pages/genres/genres.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Genres;
-var _c;
-$RefreshReg$(_c, "Genres");
-
-  $parcel$ReactRefreshHelpers$b50c.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7QQiD":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$690d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$690d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Series", ()=>Series);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Series = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Series"
-    }, void 0, false, {
-        fileName: "src/books/pages/series/series.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Series;
-var _c;
-$RefreshReg$(_c, "Series");
-
-  $parcel$ReactRefreshHelpers$690d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6aKaL":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f037 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f037.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Favorites", ()=>Favorites);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Favorites = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Favorites"
-    }, void 0, false, {
-        fileName: "src/books/pages/favorites/favorites.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Favorites;
-var _c;
-$RefreshReg$(_c, "Favorites");
-
-  $parcel$ReactRefreshHelpers$f037.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jBF5O":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d6cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d6cd.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Que", ()=>Que);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Que = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Que"
-    }, void 0, false, {
-        fileName: "src/books/pages/que/que.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Que;
-var _c;
-$RefreshReg$(_c, "Que");
-
-  $parcel$ReactRefreshHelpers$d6cd.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7cb1S":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1bda = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1bda.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Owned", ()=>Owned);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Owned = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Owned"
-    }, void 0, false, {
-        fileName: "src/books/pages/owned/owned.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Owned;
-var _c;
-$RefreshReg$(_c, "Owned");
-
-  $parcel$ReactRefreshHelpers$1bda.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8V4y7":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$20e3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$20e3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Read", ()=>Read);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Read = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Read"
-    }, void 0, false, {
-        fileName: "src/books/pages/read/read.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Read;
-var _c;
-$RefreshReg$(_c, "Read");
-
-  $parcel$ReactRefreshHelpers$20e3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"feCIU":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$12e2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$12e2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Type", ()=>Type);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Type = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Type"
-    }, void 0, false, {
-        fileName: "src/books/pages/type/type.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Type;
-var _c;
-$RefreshReg$(_c, "Type");
-
-  $parcel$ReactRefreshHelpers$12e2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aUnvb":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$fec3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$fec3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Availability", ()=>Availability);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Availability = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        children: "Availability"
-    }, void 0, false, {
-        fileName: "src/books/pages/availability/availability.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Availability;
-var _c;
-$RefreshReg$(_c, "Availability");
-
-  $parcel$ReactRefreshHelpers$fec3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"citCa":[function() {},{}],"cMC39":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./login.scss":"btfFQ"}],"btfFQ":[function() {},{}],"citCa":[function() {},{}],"cMC39":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -47395,42 +47113,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-bootstrap/Button":"aPzUt","react-bootstrap/Container":"hEdsw","react-bootstrap/Form":"iBZ80","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Offcanvas":"eC3RS","./nav-bar.scss":"2cM97","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2cM97":[function() {},{}],"7mbau":[function(require,module,exports) {
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import { Button, Card } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
-// export const BookCard = ({ book }) => {
-//   return (
-//     <Card className="h-100">
-//       <Card.Img variant="top" src={book.image} />
-//       <Card.Body>
-//         <Card.Title>{book.title}</Card.Title>
-//         <Card.Text>{book.author}</Card.Text>
-//         <Link to={`/books/${encodeURIComponent(book.id)}`}>
-//           <Button variant="link">Open</Button>
-//         </Link>
-//       </Card.Body>
-//     </Card>
-//   );
-// };
-// BookCard.propTypes = {
-//   book: PropTypes.shape({
-//     image: PropTypes.string,
-//     title: PropTypes.string.isRequired,
-//     author: PropTypes.string.isRequired,
-//     genre: PropTypes.string,
-//     series: PropTypes.string,
-//     number: PropTypes.number,
-//     description: PropTypes.string,
-//     owned: PropTypes.bool,
-//     // availability: PropTypes.array,
-//     read: PropTypes.bool,
-//     favorite: PropTypes.bool,
-//   }).isRequired,
-// };
-
-},{}],"93u2q":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","react-bootstrap/Button":"aPzUt","react-bootstrap/Container":"hEdsw","react-bootstrap/Form":"iBZ80","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Offcanvas":"eC3RS","./nav-bar.scss":"2cM97","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2cM97":[function() {},{}],"93u2q":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$281f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47594,8 +47277,6 @@ $RefreshReg$(_c, "BookList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","react-bootstrap/ListGroup":"4tGXh","react-router-dom":"9xmpe","./book-list.scss":"4y82I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4y82I":[function() {},{}],"9JV7p":[function(require,module,exports) {
-
-},{}],"lJZlQ":[function() {},{}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","react-bootstrap/ListGroup":"4tGXh","react-router-dom":"9xmpe","./book-list.scss":"4y82I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4y82I":[function() {},{}],"lJZlQ":[function() {},{}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

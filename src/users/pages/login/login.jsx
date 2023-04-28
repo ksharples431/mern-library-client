@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 import './login.scss';
 
-export const LoginView = ({ onLoggedIn }) => {
+export const LoginView = ( {onLoggedIn} ) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -32,16 +32,16 @@ export const LoginView = ({ onLoggedIn }) => {
 
       console.log('Login response: ', responseData);
 
-      if (responseData.user) {
-        console.log(responseData)
+      if (responseData) {
         localStorage.setItem('user', JSON.stringify(responseData.user));
         localStorage.setItem('token', responseData.token);
         onLoggedIn(responseData.user, responseData.token);
+        // window.location.replace('/');
       } else {
         alert('No such user');
       }
     } catch (error) {
-      console.error('Error occurred while login:', error);
+      console.error('Error occurred while trying to login:', error);
       alert('Something went wrong');
     }
   };

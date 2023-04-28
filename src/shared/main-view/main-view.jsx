@@ -1,24 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Home } from '../main-view/main-view';
 import { SignupView } from '../../users/pages/signup/signup';
 import { LoginView } from '../../users/pages/login/login';
-import { Profile } from '../../users/pages/profile/profile';
-import { Books } from '../../books/pages/titles/titles';
-import { Authors } from '../../books/pages/authors/authors';
-import { Genres } from '../../books/pages/genres/genres';
-import { Series } from '../../books/pages/series/series';
-import { Favorites } from '../../books/pages/favorites/favorites';
-import { Que } from '../../books/pages/que/que';
-import { Owned } from '../../books/pages/owned/owned';
-import { Read } from '../../books/pages/read/read';
-import { Type } from '../../books/pages/type/type';
-import { Availability } from '../../books/pages/availability/availability';
 import { BookList } from '../../books/components/book-list/book-list';
 import { BookView } from '../../books/components/book-view/book-view';
-import { BookCard } from '../../books/components/book-card/book-card';
 import { NavigationBar } from '../../shared/components/nav-bar/nav-bar.jsx';
+// import { Home } from '../main-view/main-view';
+// import { Profile } from '../../users/pages/profile/profile';
+// import { Books } from '../../books/pages/titles/titles';
+// import { Authors } from '../../books/pages/authors/authors';
+// import { Genres } from '../../books/pages/genres/genres';
+// import { Series } from '../../books/pages/series/series';
+// import { Favorites } from '../../books/pages/favorites/favorites';
+// import { Que } from '../../books/pages/que/que';
+// import { Owned } from '../../books/pages/owned/owned';
+// import { Read } from '../../books/pages/read/read';
+// import { Type } from '../../books/pages/type/type';
+// import { Availability } from '../../books/pages/availability/availability';
+// import { BookCard } from '../../books/components/book-card/book-card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './main-view.scss';
@@ -77,7 +77,7 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col md={5}>
-                    <SignupView />
+                    <SignupView onLoggedIn={(user, token) => {setUser(user); setToken(token);}} />
                   </Col>
                 )}
               </>
@@ -92,7 +92,7 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col md={5}>
-                    <LoginView onLoggedIn={(user) => setUser(user)} />
+                    <LoginView onLoggedIn={(user, token) => {setUser(user); setToken(token);}} />
                   </Col>
                 )}
               </>

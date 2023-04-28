@@ -4,13 +4,11 @@ import Form from 'react-bootstrap/Form';
 
 import './signup.scss';
 
-export const SignupView = () => {
+export const SignupView = ( {onLoggedIn} ) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
-  // const storedToken = localStorage.getItem('token');
-  // const [token, setToken] = useState(storedToken ? storedToken : null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +17,6 @@ export const SignupView = () => {
       username: username,
       password: password,
       email: email,
-      image: image,
       birthday: birthday,
     };
 
@@ -34,14 +31,22 @@ export const SignupView = () => {
           body: JSON.stringify(data),
         }
       );
-      if (response.ok) {
+
+      const responseData = await response.json();
+
+      console.log('Login response: ', responseData);
+
+      if (responseData) {
         alert('Signup successful');
-        window.location.replace('/');
+        localStorage.setItem('user', JSON.stringify(responseData.user));
+        localStorage.setItem('token', responseData.token);
+        onLoggedIn(responseData.user, responseData.token);
+        // window.location.replace('/');
       } else {
         throw new Error('Signup failed');
       }
     } catch (error) {
-      console.error('Error occurred while signup:', error);
+      console.error('Error occurred while trying to signup:', error);
       alert('Something went wrong');
     }
   };
