@@ -94,7 +94,7 @@ export const SignupView = ( {onLoggedIn} ) => {
           onChange={(e) => setBirthday(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" href="/">
+      <Button variant="primary" type="submit">
         Submit
       </Button>
     </Form>

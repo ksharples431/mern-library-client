@@ -32693,7 +32693,6 @@ const SignupView = ({ onLoggedIn  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 variant: "primary",
                 type: "submit",
-                href: "/",
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/users/pages/signup/signup.jsx",

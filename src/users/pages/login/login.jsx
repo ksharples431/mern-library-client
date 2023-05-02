@@ -15,7 +15,7 @@ export const LoginView = ( {onLoggedIn} ) => {
       email: email,
       password: password,
     };
-
+    
     try {
       const response = await fetch(
         'http://localhost:5000/api/auth/login',
@@ -26,7 +26,7 @@ export const LoginView = ( {onLoggedIn} ) => {
           },
           body: JSON.stringify(data),
         }
-      );
+        );
 
       const responseData = await response.json();
 
